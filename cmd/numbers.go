@@ -24,8 +24,6 @@ import (
 var (
 	countFlagNumbers int
 	rangeFlagNumbers []string
-	countFlag        int
-	rangeFlag        []string
 )
 
 // numbersCmd represents the numbers command
@@ -45,13 +43,13 @@ func init() {
 
 	// Here you will define your flags and configuration settings.
 	numbersCmd.Flags().IntVarP(
-		&countFlag, "count", "c", 0,
+		&countFlagNumbers, "count", "c", 0,
 		"A count of random numbers",
 	)
 	numbersCmd.MarkFlagRequired("count")
 
 	numbersCmd.Flags().StringSliceVarP(
-		&rangeFlag, "range", "r", []string{"1:100"},
+		&rangeFlagNumbers, "range", "r", []string{"1:100"},
 		"Range of numbers. Optional",
 	)
 	// Cobra supports Persistent Flags which will work for this command

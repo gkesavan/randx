@@ -24,8 +24,6 @@ import (
 var (
 	countFlagLetters int
 	langFlagLetters  string
-	Count            int
-	Lang             string
 )
 
 // lettersCmd represents the letters command
@@ -44,14 +42,14 @@ func init() {
 	rootCmd.AddCommand(lettersCmd)
 
 	lettersCmd.Flags().IntVarP(
-		&Count, "count", "c", 0,
+		&countFlagLetters, "count", "c", 0,
 		"A Count of random letters",
 	)
 
 	lettersCmd.MarkFlagRequired("count")
 
 	lettersCmd.Flags().StringVarP(
-		&Lang, "lang", "l", "en",
+		&langFlagLetters, "lang", "l", "en",
 		"A language. Optional",
 	)
 	// Cobra supports Persistent Flags which will work for this command
